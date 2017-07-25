@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>字符编码 | </title>
+    <meta name="author" content="书月秋亭">
+    
+    <meta name="description" content="前端">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="字符编码"/>
+    <meta property="og:site_name" content="书月秋亭"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="书月秋亭" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+<body>
+   
+    <nav class="grey darken-4">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">书月秋亭</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="/tag" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav grey darken-4" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row center-align">
+                <div class="col s12 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/favicon.png" alt="User Avatar">
+                </div>
+                <div class="info col s12 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">书月秋亭</p>
+                        <p class="desc">Web前端</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="/tag" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav grey darken-4" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/markdown/">
+                    markdown <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前言/">
+                    前言 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/字符编码/">
+                    字符编码 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper black">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/字符编码/">字符编码</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>字符编码</h1>
+    
+
+
+            </div>
+            <time class="red-link-context" datetime="2017-07-25T13:17:32.000Z"><a href="/2017/07/25/字符编码/">2017-07-25</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/字符/" class="chip cyan lighten-1">字符</a>
+        
+            <a href="/tags/编码/" class="chip cyan lighten-1">编码</a>
+        
+            <a href="/tags/ASCII/" class="chip cyan lighten-1">ASCII</a>
+        
+            <a href="/tags/Unicode/" class="chip cyan lighten-1">Unicode</a>
+        
+            <a href="/tags/UTF-8/" class="chip cyan lighten-1">UTF-8</a>
+        
+    </div>
+
+
+            <div class="toc red-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#1、简介"><span class="section table-of-contents-text">1、简介</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#2、ASCII"><span class="section table-of-contents-text">2、ASCII</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#3、Unicode"><span class="section table-of-contents-text">3、Unicode</span></a></li><li class="section table-of-contents-item section table-of-contents-level-1"><a class="section table-of-contents-link" href="#4、UTF-8"><span class="section table-of-contents-text">4、UTF-8</span></a></li></ol>
+</div>
+
+
+            <div class="entry red-link-context">
+                <blockquote>
+<p>本文学习文章地址<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html" target="_blank" rel="external">《字符编码笔记：ASCII，Unicode和UTF-8》</a>和<a href="http://www.ruanyifeng.com/blog/2014/12/unicode.html" target="_blank" rel="external">Unicode与JavaScript详解</a></p>
+</blockquote>
+<h1 id="1、简介"><a href="#1、简介" class="headerlink" title="1、简介"></a>1、简介</h1><p>计算机内部的信息都可以表示为一个二进制的字符串：<br><strong>位（bit）</strong>：二进制单位，以0或1表示；<br><strong>字节（byte）</strong>：8bit = 1byte。</p>
+<p>一个字节用8个位表示就是00000000（十进制0） ~ 11111111（十进制255），即2^8 = 256种，一个字节能表示的最大的整数就是255。</p>
+<h1 id="2、ASCII"><a href="#2、ASCII" class="headerlink" title="2、ASCII"></a>2、ASCII</h1><p>ASCII是将英文字符对应一个字节，包括大小写英文、数字和一些控制符号，共128个英文字符。对应匹配了128个字节，每个字节的第一个位为0，英文字符占后7位，也就是000000000 ~ 01111111，即2^7 = 128种。</p>
+<p>大写字母A的ASCII编码是65，如下图ASCII表：<br><img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=066152a5e4fe9925df01610255c135ba/7e3e6709c93d70cf078fe06dfcdcd100baa12b5c.jpg" alt="ASCII表"></p>
+<blockquote>
+<p>非ASCII：<br>处理英文字符用128个字节就够了，但是对于其他语言就不行了，例如中文，光汉字就有很多，所以中国制定了GB2312编码，使用两个字节表示一个汉字，理论上有256*256个。<br>其他国家也同样会创造自己的编码，这样就会出现乱码，为了统一编码，Unicode诞生。</p>
+</blockquote>
+<h1 id="3、Unicode"><a href="#3、Unicode" class="headerlink" title="3、Unicode"></a>3、Unicode</h1><p>Unicode的出现就是为了统一字符编码，将所有符号纳入其中，从0开始，为每个符号指定一个编号，叫<strong>“码点”</strong>，如下：</p>
+<pre><code>U + 000 = null
+</code></pre><p>上式中，U + 表示紧跟后面的十六进制数是Unicode码点。</p>
+<p>目前的Unicode的符号超过10万个，如此多的符号，不是一次行定义，而是分区定义。每个分区存放2^16 = 65536个字符，称为一个<strong>平面（plane）</strong>，共有17个平面，整个Unicode字符集大小为2^21。</p>
+<p>最前面的65536个字符位，称为<strong>基本平面（BMP）</strong>，码点范围：0 ~ 2^16 - 1，对应十六进制为U + 0000 ~ U + FFFF；<br>剩下的字符都放在<strong>辅助平面（SMP）</strong>，共16个辅助平面，码点范围：U + 010000 ~ U + 10FFFF。</p>
+<p><img src="http://image.beekka.com/blog/2014/bg2014121104.png" alt="Unicode编码规则"></p>
+<blockquote>
+<p><strong>ASCII编码和Unicode编码的区别：</strong></p>
+<ul>
+<li><p>字母A用ASCII的十进制是65，二进制是01000001，用Unicode编码，需在前面补0，A的Unicode编码为00000000 01000001；</p>
+</li>
+<li><p>汉字‘中’  超过ASCII范围，用Unicode编码十进制是20013，二进制是01001110 00101101；</p>
+</li>
+</ul>
+<p>实际上，用Unicode编码是2个字节，ASCII编码是1个字节，需要多一倍的存储空间，如果只用英文字符，这样的方式会浪费存储空间。</p>
+</blockquote>
+<h1 id="4、UTF-8"><a href="#4、UTF-8" class="headerlink" title="4、UTF-8"></a>4、UTF-8</h1><p>UTF-8是Unicode实现方式之一。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>可使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。</li>
+</ul>
+<p><strong>规则：</strong></p>
+<ul>
+<li>单字节符号，字节的第一位为0，后7位是这个符号的unicode码，对于英文字母，UTF-8和ASCII相同；</li>
+<li>对于n &gt; 1字节的符号，第一个字节的前n位都设为1，第n + 1位设为0，后面字节的前两位都是10，剩下的为这个符号的unicode码。</li>
+</ul>
+<p><img src="http://upload-images.jianshu.io/upload_images/689802-464e92357be25120.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ASCII和Unicode的对比"></p>
+<p><strong>再来看下ASCII、Unicode和UTF-8三者示例对比：</strong><br><img src="https://pic2.zhimg.com/549a3e0436ad14ebe402a6d27ac30b99_b.jpeg" alt="三者对比"></p>
+<p>根据示例，字母A的第一位是0，则这个字节就是一个字符；如果第一位是1，则连续多少个1，就表示当前字符占多少个字节；<br>汉字‘中’的码点为基本平面，范围在U + 0000 ~ U + FFFF，对应UTF-8的编码是3个字节，所以第一个字节的前三位都为1，后面都为0；第2和第3个字节的前两位都为10。</p>
+<blockquote>
+<p>本文地址：<a href="http://jiangxinlei.cn/2017/07/25/字符编码/，转载请注明，谢谢">http://jiangxinlei.cn/2017/07/25/字符编码/，转载请注明，谢谢</a></p>
+</blockquote>
+
+                
+
+
+<p class="red-link-context">
+    <a href="/2017/07/22/markdown/" rel="next" title="Markdown 语法">
+    下一篇：Markdown 语法
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+
+    <section id="comment">
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function() {
+                this.page.url = 'http://jiangxinlei.cn/2017/07/25/字符编码/';
+                this.page.identifier = '2017/07/25/字符编码/';
+            };
+            (function() {
+                var d = document,
+                    s = d.createElement('script');
+                s.src = '//jiangxinlei.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', + new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+        </noscript>
+    </section>
+
+
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large grey">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect cyan" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse light-green"  data-activates="main-menu" title="菜单"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer grey darken-3 darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m6 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/familychapsy" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/jiangxinlei" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m6 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
+                
+                    <a class="social-link" href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
+                
+                    <a class="social-link" href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
+                
+                    <a class="social-link" href="https://www.h5jun.com/" target="_blank">十年踪迹</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright red-link-context">
+        <div class="container">
+            © 2017 jiangxinlei.cn, All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.nicescroll.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('black lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f421febd7eb04121a185a89cf544cfba";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+    <script>
+        $('body').niceScroll({
+            cursorcolor: "#00b0ff",
+            cursoropacitymax: 1, 
+            touchbehavior: false, 
+            cursorwidth: "5px", 
+            cursorborder: "0", 
+            cursorborderradius: "1px",
+            autohidemode: false 
+        });
+    </script>
+</body>
+</html>
