@@ -215,16 +215,16 @@ $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
   
     
     <entry>
-      <title><![CDATA[专题]]></title>
-      <url>/reading/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<p>欢迎来到我的个人博客。</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[专题]]></title>
+      <url>/reading/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
