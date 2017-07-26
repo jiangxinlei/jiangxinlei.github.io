@@ -198,7 +198,7 @@ $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
       <url>/2017/07/09/%E5%89%8D%E8%A8%80/</url>
       <content type="html"><![CDATA[<p>大家好，我是书月秋亭，一名前端工程师。创建此博客的初衷，是想让自己在技术学习过程中做总结，以博客笔记的形式展示出来，这样可以很好地方便自己查阅，当然，如果可以给同在学习道路上兄弟提供一点帮助的话，是我的荣幸。</p>
 <p>本人不是大牛，如文章出现不正确的地方，欢迎在评论中指出，希望与大家相互学习，共同进步。</p>
-<p>博客由HEXO驱动，评论用的是Disqus（需要翻墙），如果看不到评论或不能评论，欢迎关注我的<a href="http://weibo.com/familychapsy" target="_blank" rel="external">新浪微博</a>和<a href="https://github.com/jiangxinlei" target="_blank" rel="external">GitHub</a>。</p>
+<p>博客由HEXO驱动，评论用的是来比力，欢迎给我评论留言，也欢迎关注我的<a href="http://weibo.com/familychapsy" target="_blank" rel="external">新浪微博</a>和<a href="https://github.com/jiangxinlei" target="_blank" rel="external">GitHub</a>。</p>
 <p>最后，欢迎各位大牛提宝贵意见，十分感激。</p>
 ]]></content>
       
@@ -215,16 +215,16 @@ $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
   
     
     <entry>
+      <title><![CDATA[专题]]></title>
+      <url>/reading/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<p>欢迎来到我的个人博客。</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[专题]]></title>
-      <url>/reading/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
