@@ -1,0 +1,793 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    
+
+    <title>Window对象 | </title>
+    <meta name="author" content="书月秋亭">
+    
+    <meta name="description" content="前端">
+    
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:title" content="Window对象"/>
+    <meta property="og:site_name" content="书月秋亭"/>
+
+    
+    <meta property="og:image" content="undefined"/>
+    
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="alternate" href="/atom.xml" title="书月秋亭" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/lib/materialize.min.css">
+    <link rel="stylesheet" href="/css/lib/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+
+    
+        <link rel="stylesheet" href="/css/lib/prettify-tomorrow-night-eighties.css" type="text/css">
+    
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+
+<body>
+   
+    <nav class="grey darken-4">
+    <div class="nav-wrapper">
+        <a href="#" data-activates="main-menu" class="button-collapse">
+            <i class="fa fa-navicon"></i>
+        </a>
+        <div class="">
+            <a href="/" class="brand-logo hide-on-med-and-down">书月秋亭</a>
+            <ul class="right hide-on-med-and-down">
+                
+                    <li>
+                        <a class="menu-home " href="/" >
+                            <i class="fa fa-home "></i>
+                            
+                            首页
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-archive " href="/archives" >
+                            <i class="fa fa-archive "></i>
+                            
+                            归档
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-category category-menu" href="/tag" data-activates="category-menu" >
+                            <i class="fa fa-bookmark "></i>
+                            
+                            分类
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-reading " href="/reading" >
+                            <i class="fa fa-book "></i>
+                            
+                            读书
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-about " href="/about" >
+                            <i class="fa fa-user "></i>
+                            
+                            关于
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a class="menu-search modal-trigger " href="#search" >
+                            <i class="fa fa-search "></i>
+                            
+                            搜索
+                        </a>
+                    </li>
+                
+            </ul>
+            <div>
+    <ul class="side-nav grey darken-4" id="main-menu">
+        
+        <li class="side-user">
+            <div class="row center-align">
+                <div class="col s12 no-padding">
+                    <img class="avatar-image circle responsive-img" src="/img/favicon.png" alt="User Avatar">
+                </div>
+                <div class="info col s12 valign-wrapper no-padding">
+                    <div class="valign">
+                        <p class="name">书月秋亭</p>
+                        <p class="desc">Web前端</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        
+
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-home " href="/" >
+                    <i class="fa fa-home "></i>
+                    
+                    首页
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-archive " href="/archives" >
+                    <i class="fa fa-archive "></i>
+                    
+                    归档
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-category category-menu" href="/tag" data-activates="category-menu" >
+                    <i class="fa fa-bookmark "></i>
+                    
+                    分类
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-reading " href="/reading" >
+                    <i class="fa fa-book "></i>
+                    
+                    读书
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-about " href="/about" >
+                    <i class="fa fa-user "></i>
+                    
+                    关于
+                </a>
+            </li>
+        
+            <li class="no-padding">
+                <a class="waves-effect menu-search modal-trigger " href="#search" >
+                    <i class="fa fa-search "></i>
+                    
+                    搜索
+                </a>
+            </li>
+        
+    </ul>
+
+    <ul class="side-nav grey darken-4" id="category-menu">
+    
+
+            
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/JavaScript/">
+                    JavaScript <span class="right">9 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/JavaScript/BOM/">
+                    BOM <span class="right">8 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-1" collapse-level="1">
+                <a class="no-padding" href="/categories/JavaScript/技巧/">
+                    技巧 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/markdown/">
+                    markdown <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/字符编码/">
+                    字符编码 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+            <li class="collapse-level-0" collapse-level="0">
+                <a class="no-padding" href="/categories/前言/">
+                    前言 <span class="right">1 篇</span></a>
+                </a>
+            </li>
+
+        
+
+    </ul>
+</div>
+
+        </div>
+    </div>
+</nav>
+
+<div id="search" class="modal search-modal">
+    <div class="row">
+        <div class="input-field col s12">
+              <input id="search-input" type="text">
+              <label for="search-input">搜索</label>
+        </div>
+
+    </div>
+    <div id="search-result" class="search-result col s12">
+
+    </div>
+</div>
+
+
+    <main>
+        <div class="container main-container">
+    <nav class="page-nav hide-on-small-only">
+    <div class="nav-wrapper black">
+        <span class="breadcrumb">当前位置（分类目录）</span>
+        
+            
+    
+    
+    <a class="breadcrumb" href="/categories/JavaScript/">JavaScript</a><a class="breadcrumb" href="/categories/JavaScript/BOM/">BOM</a>
+
+
+        
+
+        
+    </div>
+</nav>
+
+<article>
+    <div class="card">
+        <div class="card-content">
+            
+
+            <div class="article-title">
+                
+    
+        <h1>Window对象</h1>
+    
+
+
+            </div>
+            <time class="red-link-context" datetime="2018-05-31T13:41:40.000Z"><a href="/2018/05/31/Window对象/">2018-05-31</a></time>
+
+            <span id="busuanzi_container_page_pv" class="read-times-container">
+    <i class="fa fa-eye"></i>
+    <span id="busuanzi_value_page_pv"></span>
+</span>
+
+            
+    <div class="tags-row">
+        
+            <a href="/tags/BOM/" class="chip cyan lighten-1">BOM</a>
+        
+            <a href="/tags/Window/" class="chip cyan lighten-1">Window</a>
+        
+    </div>
+
+
+            <div class="toc red-link-context hide-on-med-and-down">
+    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#一、属性"><span class="section table-of-contents-text">一、属性</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1、name"><span class="section table-of-contents-text">1、name</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2、length"><span class="section table-of-contents-text">2、length</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3、closed"><span class="section table-of-contents-text">3、closed</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4、opener"><span class="section table-of-contents-text">4、opener</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5、screenLeft和screenTop"><span class="section table-of-contents-text">5、screenLeft和screenTop</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6、screenX和screenY"><span class="section table-of-contents-text">6、screenX和screenY</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7、pageXOffset和pageYOffset"><span class="section table-of-contents-text">7、pageXOffset和pageYOffset</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8、innerWidth和innerHeight"><span class="section table-of-contents-text">8、innerWidth和innerHeight</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9、outerWidth和outerHeight"><span class="section table-of-contents-text">9、outerWidth和outerHeight</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10、self、parent、top"><span class="section table-of-contents-text">10、self、parent、top</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#二、方法"><span class="section table-of-contents-text">二、方法</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1、alert-、confirm-、prompt"><span class="section table-of-contents-text">1、alert()、confirm()、prompt()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2、open"><span class="section table-of-contents-text">2、open()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3、close"><span class="section table-of-contents-text">3、close()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4、moveTo-x-y"><span class="section table-of-contents-text">4、moveTo(x, y)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5、moveBy-x-y"><span class="section table-of-contents-text">5、moveBy(x, y)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6、scrollTo-x-y"><span class="section table-of-contents-text">6、scrollTo(x, y)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7、scrollBy-x-y"><span class="section table-of-contents-text">7、scrollBy(x, y)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8、resizeTo-n-n"><span class="section table-of-contents-text">8、resizeTo(n, n)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#9、resizeBy-n-n"><span class="section table-of-contents-text">9、resizeBy(n, n)</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#10、print"><span class="section table-of-contents-text">10、print()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#11、setTimeout-和clearTimeout"><span class="section table-of-contents-text">11、setTimeout()和clearTimeout()</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#12、、setInterval-和clearInterval"><span class="section table-of-contents-text">12、、setInterval()和clearInterval()</span></a></li></ol></li><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#三、事件"><span class="section table-of-contents-text">三、事件</span></a></li></ol>
+</div>
+
+
+            <div class="entry red-link-context">
+                <p>window表示当前的浏览器窗口。如果HTML文档中包含框架（<code>&lt;iframe&gt;</code>标签），浏览器会为HTML文档创建一个window对象，也会为框架创建一个window对象。</p>
+<blockquote>
+<p>window的属性和方法都可省略window单独使用。</p>
+</blockquote>
+<h2 id="一、属性"><a href="#一、属性" class="headerlink" title="一、属性"></a>一、属性</h2><h3 id="1、name"><a href="#1、name" class="headerlink" title="1、name"></a>1、<code>name</code></h3><p>含义：设置或返回浏览器窗口的名称；获取<code>window.open()</code>方法中设置的窗口名称，或是在<code>iframe</code>页面框架中获取当前窗口的名称。</p>
+<p>使用：</p>
+<pre><code>window.name = &#39;window对象&#39;;       // 设置浏览器窗口的名称
+window.name;                     // &quot;window对象&quot;，获取浏览器窗口的名称
+
+var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;掘金&#39;);
+jueJin.name;        // &quot;掘金&quot;
+</code></pre><h3 id="2、length"><a href="#2、length" class="headerlink" title="2、length"></a>2、<code>length</code></h3><p>含义：设置或返回浏览器窗口中的<code>iframe</code>框架数量。HTML文档中没有<code>&lt;iframe&gt;</code>标签，则<code>length</code>为0。</p>
+<p>使用：</p>
+<pre><code>window.length = 2;      // 设置
+window.length;          // 2，返回
+</code></pre><h3 id="3、closed"><a href="#3、closed" class="headerlink" title="3、closed"></a>3、<code>closed</code></h3><p>含义：返回一个布尔值，表示窗口是否关闭。</p>
+<p>使用：</p>
+<pre><code>window.closed;      // flase
+</code></pre><h3 id="4、opener"><a href="#4、opener" class="headerlink" title="4、opener"></a>4、<code>opener</code></h3><p>含义：返回打开当前窗口窗口的引用；在A窗口中用<code>window.open()</code>创建窗口B，B中<code>window.opener</code>的值就是A，即相当于A是B的父窗口。</p>
+<p>使用：</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;掘金&#39;);
+jueJin.open;        // window，在其他窗口中，opener为null
+</code></pre><h3 id="5、screenLeft和screenTop"><a href="#5、screenLeft和screenTop" class="headerlink" title="5、screenLeft和screenTop"></a>5、<code>screenLeft</code>和<code>screenTop</code></h3><blockquote>
+<p>Firefox浏览器不支持。</p>
+</blockquote>
+<p>含义：返回浏览器窗口相对于屏幕左边和上边的位置。</p>
+<p>使用：</p>
+<pre><code>window.screenTop;       // 0，浏览器全屏
+window.screenLeft;      // 0，浏览器全屏
+</code></pre><h3 id="6、screenX和screenY"><a href="#6、screenX和screenY" class="headerlink" title="6、screenX和screenY"></a>6、<code>screenX</code>和<code>screenY</code></h3><blockquote>
+<p>除IE外，Firefox和其他浏览器都支持。</p>
+</blockquote>
+<p>含义：返回浏览器窗口相对于屏幕左边和上边的位置。</p>
+<p>使用：</p>
+<pre><code>window.screenX;         // 0，浏览器全屏
+window.screenY;         // 0，浏览器全屏
+</code></pre><h3 id="7、pageXOffset和pageYOffset"><a href="#7、pageXOffset和pageYOffset" class="headerlink" title="7、pageXOffset和pageYOffset"></a>7、<code>pageXOffset</code>和<code>pageYOffset</code></h3><p>含义：返回HTML页面的当前视图区域的左上角相对于整个HTML页面左上角的左边和上边的位置；实质是水平和垂直滚动条滚动的距离。</p>
+<p>使用：</p>
+<pre><code>window.pageXOffset;
+window.pageYOffset;
+</code></pre><h3 id="8、innerWidth和innerHeight"><a href="#8、innerWidth和innerHeight" class="headerlink" title="8、innerWidth和innerHeight"></a>8、<code>innerWidth</code>和<code>innerHeight</code></h3><p>含义：返回HTML页面视图区域的宽度和高度（包括滚动条，只要属于HTML页面的）。</p>
+<p>使用：</p>
+<pre><code>window.innerWidth;
+window.innerHeight;
+</code></pre><h3 id="9、outerWidth和outerHeight"><a href="#9、outerWidth和outerHeight" class="headerlink" title="9、outerWidth和outerHeight"></a>9、<code>outerWidth</code>和<code>outerHeight</code></h3><p>含义：返回浏览器窗口的宽度和高度。</p>
+<p>使用：</p>
+<pre><code>window.outerWidth;
+window.outerHeight;
+</code></pre><h3 id="10、self、parent、top"><a href="#10、self、parent、top" class="headerlink" title="10、self、parent、top"></a>10、<code>self</code>、<code>parent</code>、<code>top</code></h3><p>含义：<code>self</code>返回当前窗口；<code>parent</code>返回当前窗口的父窗口；<code>top</code>返回最顶层父窗口。</p>
+<p>使用：</p>
+<pre><code>window.self === window;     // true，返回当前窗口即等于它自己window
+window.parent;
+window.top;
+
+window.self === window.top; // true，判断当前窗口是否就是顶层窗口
+</code></pre><h2 id="二、方法"><a href="#二、方法" class="headerlink" title="二、方法"></a>二、方法</h2><h3 id="1、alert-、confirm-、prompt"><a href="#1、alert-、confirm-、prompt" class="headerlink" title="1、alert()、confirm()、prompt()"></a>1、<code>alert()</code>、<code>confirm()</code>、<code>prompt()</code></h3><p>作用：获取用户响应，不作介绍。</p>
+<h3 id="2、open"><a href="#2、open" class="headerlink" title="2、open()"></a>2、<code>open()</code></h3><p>含义：创建一个新的浏览器窗口（或标签页），并返回这个窗口window对象。</p>
+<p>参数：</p>
+<ul>
+<li>第一个参数：字符串，在新窗口中显示的文档URL，省略则为<code>ablut:blank</code>；</li>
+<li>第二个参数：字符串，新窗口的名称，如果名称存在，则跳转到该名称的窗口，不新建窗口，省略则默认使用<code>_blank</code>，创建一个没名称的窗口，可用<code>window.name</code>获取；</li>
+<li>第三个参数：字符串，可选，逗号分隔的列表，可指定窗口的大小和各种属性；非标准，建议忽略；</li>
+<li>第四个参数：布尔值，只在第二个参数存在才有用，表示第一个参数指定的URL是否应该替换浏览历史的当前记录，默认为<code>false</code>。</li>
+</ul>
+<p>使用：</p>
+<pre><code>window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;);
+// 等同于 &lt;a href=&quot;https://juejin.im/&quot; target=&quot;jueJin&quot;&gt;&lt;/a&gt;
+
+var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;, &#39;height=360,width=360,left=0,top=0,resizable=yes&#39;);
+jueJin.name;        // &quot;jueJin&quot;
+</code></pre><h3 id="3、close"><a href="#3、close" class="headerlink" title="3、close()"></a>3、<code>close()</code></h3><p>含义：关闭<code>window.open()</code>打开的窗口。</p>
+<p>使用：</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;);
+jueJin.close();
+</code></pre><h3 id="4、moveTo-x-y"><a href="#4、moveTo-x-y" class="headerlink" title="4、moveTo(x, y)"></a>4、<code>moveTo(x, y)</code></h3><p>含义：移动窗口到距离屏幕左上角的指定位置。</p>
+<p>参数：两个参数，分别是窗口左上角距离屏幕的左边和上边的距离。</p>
+<p>使用：</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;, &#39;height=360,width=360,left=0,top=0,resizable=yes&#39;);
+jueJin.moveTo(200, 200);
+</code></pre><h3 id="5、moveBy-x-y"><a href="#5、moveBy-x-y" class="headerlink" title="5、moveBy(x, y)"></a>5、<code>moveBy(x, y)</code></h3><p>含义：窗口在原位置基础上向右向下移动一定距离。</p>
+<p>参数：两个参数，分别是窗口左上角向右和向下移动的距离。</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;, &#39;height=360,width=360,left=0,top=0,resizable=yes&#39;);
+jueJin.moveBy(200, 200);
+</code></pre><h3 id="6、scrollTo-x-y"><a href="#6、scrollTo-x-y" class="headerlink" title="6、scrollTo(x, y)"></a>6、<code>scrollTo(x, y)</code></h3><p>含义：滚动HTML页面到距离整个网页左上角的指定位置。</p>
+<p>参数：两个参数，分别是HTML页面左上角距离整个网页的左边和上边的距离。</p>
+<pre><code>window.scrollTo(0, 100);        // 滚动页面距离整个页面（0, 100）位置
+</code></pre><h3 id="7、scrollBy-x-y"><a href="#7、scrollBy-x-y" class="headerlink" title="7、scrollBy(x, y)"></a>7、<code>scrollBy(x, y)</code></h3><p>含义：HTML页面在原位置基础上向下向右滚动一定距离。</p>
+<p>参数：两个参数，分别是HTML页面向右和向下滚动的距离。</p>
+<pre><code>window.scrollBy(0, window.innerHeight);        // 将网页向下滚动一屏
+</code></pre><h3 id="8、resizeTo-n-n"><a href="#8、resizeTo-n-n" class="headerlink" title="8、resizeTo(n, n)"></a>8、<code>resizeTo(n, n)</code></h3><p>含义：调整窗口到指定大小。</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;, &#39;height=360,width=360,left=0,top=0,resizable=yes&#39;);
+jueJin.resizeTo(600, 600);      // 调整窗口的宽高为600px
+</code></pre><h3 id="9、resizeBy-n-n"><a href="#9、resizeBy-n-n" class="headerlink" title="9、resizeBy(n, n)"></a>9、<code>resizeBy(n, n)</code></h3><p>含义：在原窗口大小基础上增加或缩小指定大小。</p>
+<pre><code>var jueJin = window.open(&#39;https://juejin.im/&#39;, &#39;jueJin&#39;, &#39;height=360,width=360,left=0,top=0,resizable=yes&#39;);
+jueJin.resizeBy(100, 100);      // 将窗口的宽高增加100px
+</code></pre><h3 id="10、print"><a href="#10、print" class="headerlink" title="10、print()"></a>10、<code>print()</code></h3><p>含义：弹出打印窗口。</p>
+<p>使用：</p>
+<pre><code>window.print();
+</code></pre><h3 id="11、setTimeout-和clearTimeout"><a href="#11、setTimeout-和clearTimeout" class="headerlink" title="11、setTimeout()和clearTimeout()"></a>11、<code>setTimeout()</code>和<code>clearTimeout()</code></h3><p>含义：<code>setTimeout()</code>表示超时调用，用以注册一个函数在指定的时间之后运行；返回一个数值ID，<code>clearTimeout()</code>可以通过这个ID取消超时调用。</p>
+<pre><code>var timeOut = setTimeout(function() {
+    console.log(&#39;hello&#39;);
+}, 1000);               // 原本约定一秒后输出“hello”
+
+clearTimeout(timeOut);  // 但是被取消了
+</code></pre><h3 id="12、、setInterval-和clearInterval"><a href="#12、、setInterval-和clearInterval" class="headerlink" title="12、、setInterval()和clearInterval()"></a>12、<code>、setInterval()</code>和<code>clearInterval()</code></h3><p>含义：<code>setTimeout()</code>表示间歇调用，用以注册一个函数按照指定的时间间歇重复运行；返回一个数值ID，<code>clearInterval()</code>可以通过这个ID取消间歇调用；但后一个间歇调用可能会前一个间歇调用之前运行，所以不建议使用，可用超时调用模拟间歇调用。</p>
+<pre><code>var interval = setInterval(function() {
+    console.log(&#39;hello&#39;);
+}, 1000);                // 原本约定每过一秒就输出“hello”
+
+clearTimeout(interval);  // 但是被取消了
+
+// 用超时调用模拟间歇调用
+var num = 0, maxNum = 10;
+function interval() {
+    num++;
+    if(num &lt; maxNum) {
+        setTimeout(interval, 1000);
+    }else{
+        console.log(&#39;over&#39;);
+    }
+}
+setTimeout(interval, 1000);
+</code></pre><h2 id="三、事件"><a href="#三、事件" class="headerlink" title="三、事件"></a>三、事件</h2><ul>
+<li>onerror</li>
+<li>load、onload</li>
+</ul>
+
+                
+<p class="red-link-context">
+    <a href="/2018/05/31/History对象/" rel="next" title="History对象">
+    上一篇：History对象
+  </a>
+</p>
+
+
+
+<p class="red-link-context">
+    <a href="/2018/05/31/BOM/" rel="next" title="BOM">
+    下一篇：BOM
+  </a>
+</p>
+
+
+            </div>
+			
+        </div>
+    </div>
+</article>
+
+
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTczNS82MzAx">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+</div>
+
+        <div class="fixed-action-btn float-sitemap">
+    <a class="btn-floating btn-large grey">
+      <i class="fa fa-caret-square-o-up"></i>
+    </a>
+    <ul>
+      <li><a class="btn-return-top btn-floating waves-effect cyan" title="回到顶部"><i class="fa fa-arrow-circle-o-up"></i></a></li>
+      <li><a class="btn-floating waves-effect button-collapse light-green"  data-activates="main-menu" title="菜单"><i class="fa fa-navicon"></i></a></li>
+    </ul>
+  </div>
+
+    </main>
+    <footer class="page-footer grey darken-3 darken-1">
+    
+    <div class="footer-container container">
+        <div class="row">
+            
+            <div class="social-group col m6 s12">
+                <h5 class="white-text">社交</h5>
+                
+                    <a class="social-link" href="http://weibo.com/familychapsy" target="_blank">
+                        <i class="fa fa-2x fa-weibo"></i>
+                    </a>
+                
+                    <a class="social-link" href="https://github.com/jiangxinlei" target="_blank">
+                        <i class="fa fa-2x fa-github"></i>
+                    </a>
+                
+                    <a class="social-link" href="/atom.xml" target="_blank">
+                        <i class="fa fa-2x fa-rss"></i>
+                    </a>
+                
+                
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+    </script>
+    <div class="site-visitors-container white-text">
+        <span>
+            <i class="fa fa-user"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+        </span>
+        <span>&nbsp;|&nbsp;</span>
+        <span>
+            <i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+
+
+            </div>
+            
+
+            
+            <div class="col m6 s12">
+                <h5 class="white-text">友情链接</h5>
+                
+                    <a class="social-link" href="http://www.ruanyifeng.com/home.html" target="_blank">阮一峰</a>
+                
+                    <a class="social-link" href="http://www.barretlee.com/" target="_blank">小胡子哥</a>
+                
+                    <a class="social-link" href="http://www.liaoxuefeng.com/" target="_blank">廖雪峰</a>
+                
+                    <a class="social-link" href="https://www.h5jun.com/" target="_blank">十年踪迹</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <div class="footer-copyright red-link-context">
+        <div class="container">
+            © 2017 jiangxinlei.cn, All rights reserved.
+        </div>
+    </div>
+</footer>
+
+
+    <noscript>
+    <div class="noscript">
+        <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+    </div>
+</noscript>
+<div class="noscript">
+    <p class="center-align">当前网速较慢或者你使用的浏览器不支持博客特定功能，请尝试刷新或换用Chrome、Firefox等现代浏览器</p>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.nicescroll.js"></script>
+<script src="/js/materialize.min.js"></script>
+
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // 隐藏禁用javascript（针对微信内置浏览器）的提示
+            $('.noscript').hide();
+
+            // 图片缩放效果
+            var $imgs = $('img').not('.slider-image').not('.avatar-image').not('.carousel-image').not('.card-cover-image').not('.qrcode');
+
+            // 给图片加上点击放大效果（materialbox插件）
+            $imgs.addClass('materialboxed').each(function(i, el) {
+                $(this).attr('data-caption', $(this).attr('alt') || ' ');
+            }).materialbox();
+
+            // 优化表格的显示
+            $('table').each(function() {
+                var $table = $(this);
+                // 除去多行代码的情况
+                if ($table.find('pre').length == 0) {
+                    $table.addClass('responsive-table striped bordered');
+                }
+            });
+
+            // 首页幻灯片
+            $('.slider').slider({indicators: true, full_width: true, interval: 8000});
+
+            $(".button-collapse").sideNav();
+            $(".category-menu").sideNav();
+
+            // 针对gallery post
+            $('.carousel').carousel({full_width: true});
+            $('.carousel-control.prev').click(function() {
+                $('.carousel').carousel('prev');
+            });
+            $('.carousel-control.next').click(function() {
+                $('.carousel').carousel('next');
+            });
+
+            // 文章目录
+            $('article').not('.simple-article').find('h1').add('h2').add('h3').add('h4').add('h5').add('h6').scrollSpy();
+
+            // 目录随屏幕滚动（防止目录过长越过footer）
+            var $toc = $('.toc');
+            var scrollTargetTop = 0;
+            $(window).scroll(function() {
+                var $activeLink = $toc.find('a.active.section');
+                if ($(window).scrollTop() < 100) {
+                    scrollTargetTop = 0;
+                } else {
+                    if ($activeLink[0]) {
+                        scrollTargetTop = $activeLink.offset().top - $toc.offset().top;
+                    }
+                }
+                $toc.css('top', '-' + scrollTargetTop + 'px');
+            });
+
+            // 修正文章目录的left-border颜色
+            var color = $('.table-of-contents-text').css('color');
+            $('.table-of-contents-link').css('border-left-color', color);
+
+            // 针对移动端做的优化：FAB按钮点击一下收回
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                $('.fixed-action-btn').addClass('click-to-toggle');
+            }
+            // 回到顶部
+            $('.btn-return-top').click(function() {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+            // 重置读书页面的Tab标签页的颜色
+            $('li.tab a').hover(function() {
+                $(this).toggleClass('text-lighten-4');
+            });
+            $('.indicator').addClass('black lighten-2');
+
+            
+
+            // 搜索功能
+            $('.modal-trigger').leanModal({
+                // 打开搜索框时自动聚焦
+                ready: function() {
+                    if ($('#search').is(":visible")) {
+                        $('#search-input').focus();
+                    }
+                }
+            });
+            var searchXml = "search.xml";
+            if (searchXml.length == 0) {
+             	searchXml = "search.xml";
+            }
+            var searchPath = "/" + searchXml;
+            initSearch(searchPath, 'search-input', 'search-result');
+        });
+
+        // 初始化搜索与匹配函数
+        var initSearch = function(path, search_id, content_id) {
+            'use strict';
+            $.ajax({
+                url: path,
+                dataType: "xml",
+                success: function(xmlResponse) {
+                    // get the contents from search data
+                    var datas = $("entry", xmlResponse).map(function() {
+                        return {
+                            title: $("title", this).text(),
+                            content: $("content", this).text(),
+                            url: $("url", this).text()
+                        };
+                    }).get();
+                    var $input = document.getElementById(search_id);
+                    var $resultContent = document.getElementById(content_id);
+                    $input.addEventListener('input', function() {
+                        var str = '<ul class=\"search-result-list\">';
+                        var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                        $resultContent.innerHTML = "";
+                        if (this.value.trim().length <= 0) {
+                            return;
+                        }
+                        // perform local searching
+                        datas.forEach(function(data) {
+                            var isMatch = true;
+                            var content_index = [];
+                            var data_title = data.title.trim().toLowerCase();
+                            var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                            var data_url = data.url;
+                            var index_title = -1;
+                            var index_content = -1;
+                            var first_occur = -1;
+                            // only match artiles with not empty titles and contents
+                            if (data_title != '' && data_content != '') {
+                                keywords.forEach(function(keyword, i) {
+                                    index_title = data_title.indexOf(keyword);
+                                    index_content = data_content.indexOf(keyword);
+                                    if (index_title < 0 && index_content < 0) {
+                                        isMatch = false;
+                                    } else {
+                                        if (index_content < 0) {
+                                            index_content = 0;
+                                        }
+                                        if (i == 0) {
+                                            first_occur = index_content;
+                                        }
+                                    }
+                                });
+                            }
+                            // show search results
+                            if (isMatch) {
+                                keywords.forEach(function(keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    data_title = data_title.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                });
+
+                                str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                                var content = data.content.trim().replace(/<[^>]+>/g, "");
+                                if (first_occur >= 0) {
+                                    // cut out 100 characters
+                                    var start = first_occur - 20;
+                                    var end = first_occur + 80;
+                                    if (start < 0) {
+                                        start = 0;
+                                    }
+                                    if (start == 0) {
+                                        end = 100;
+                                    }
+                                    if (end > content.length) {
+                                        end = content.length;
+                                    }
+                                    var match_content = content.substring(start, end);
+                                    // highlight all keywords
+                                    keywords.forEach(function(keyword) {
+                                        var regS = new RegExp(keyword, "gi");
+                                        match_content = match_content.replace(regS, "<span class=\"search-keyword red lighten-2\">" + keyword + "</span>");
+                                    });
+
+                                    str += "<p class=\"search-result\">..." + match_content + "...</p>"
+                                }
+                                str += "</li>";
+                            }
+                        });
+                        str += "</ul>";
+                        $resultContent.innerHTML = str;
+                    });
+                }
+            });
+        }
+    })(jQuery);
+</script>
+
+
+<script src="/js/prettify.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+</script>
+
+
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f421febd7eb04121a185a89cf544cfba";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+
+
+    <script>
+        $('body').niceScroll({
+            cursorcolor: "#00b0ff",
+            cursoropacitymax: 1, 
+            touchbehavior: false, 
+            cursorwidth: "5px", 
+            cursorborder: "0", 
+            cursorborderradius: "1px",
+            autohidemode: false 
+        });
+    </script>
+</body>
+</html>
