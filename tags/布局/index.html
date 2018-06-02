@@ -7,7 +7,7 @@
 
     
 
-    <title>Screen对象 | </title>
+    <title>布局 | </title>
     <meta name="author" content="书月秋亭">
     
     <meta name="description" content="前端">
@@ -15,7 +15,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <meta property="og:title" content="Screen对象"/>
+    
     <meta property="og:site_name" content="书月秋亭"/>
 
     
@@ -248,124 +248,31 @@
 
     <main>
         <div class="container main-container">
-    <nav class="page-nav hide-on-small-only">
+    
+
+<nav class="page-nav hide-on-small-only">
     <div class="nav-wrapper black">
-        <span class="breadcrumb">当前位置（分类目录）</span>
-        
-            
-    
-    
-    <a class="breadcrumb" href="/categories/JavaScript/">JavaScript</a><a class="breadcrumb" href="/categories/JavaScript/BOM/">BOM</a>
-
-
+        <span class="breadcrumb">当前位置（标签）</span>
         
 
+        
+            <a class="breadcrumb" href="/tags/布局/">布局</a>
         
     </div>
 </nav>
 
-<article>
-    <div class="card">
-        <div class="card-content">
-            
-
-            <div class="article-title">
-                
-    
-        <h1>Screen对象</h1>
-    
 
 
-            </div>
-            <time class="red-link-context" datetime="2018-05-31T13:47:08.000Z"><a href="/2018/05/31/Screen对象/">2018-05-31</a></time>
-
-            <span id="busuanzi_container_page_pv" class="read-times-container">
-    <i class="fa fa-eye"></i>
-    <span id="busuanzi_value_page_pv"></span>
-</span>
-
-            
-    <div class="tags-row">
+    <div class="collection mt-0">
         
-            <a href="/tags/BOM/" class="chip cyan lighten-1">BOM</a>
-        
-            <a href="/tags/Screen/" class="chip cyan lighten-1">Screen</a>
+            <a href="/2018/06/02/Flex全解析/" class="collection-item grey-text text-darken-1">
+                <time datetime="2018-06-02T13:29:32.000Z">2018-06-02</time>
+                <span>&nbsp;&nbsp;&nbsp;</span>
+                Flex全解析
+            </a>
         
     </div>
 
-
-            <div class="toc red-link-context hide-on-med-and-down">
-    <ol class="section table-of-contents"><li class="section table-of-contents-item section table-of-contents-level-2"><a class="section table-of-contents-link" href="#一、属性"><span class="section table-of-contents-text">一、属性</span></a><ol class="section table-of-contents-child"><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#1、availHeight"><span class="section table-of-contents-text">1、availHeight</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#2、availWidth"><span class="section table-of-contents-text">2、availWidth</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#3、height"><span class="section table-of-contents-text">3、height</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#4、width"><span class="section table-of-contents-text">4、width</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#5、availTop"><span class="section table-of-contents-text">5、availTop</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#6、availLeft"><span class="section table-of-contents-text">6、availLeft</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#7、colorDepth"><span class="section table-of-contents-text">7、colorDepth</span></a></li><li class="section table-of-contents-item section table-of-contents-level-3"><a class="section table-of-contents-link" href="#8、pixelDepth"><span class="section table-of-contents-text">8、pixelDepth</span></a></li></ol></li></ol>
-</div>
-
-
-            <div class="entry red-link-context">
-                <p>提供用户显示器大小和颜色数量的信息；显示器的大小取决于屏幕分辨率大小。如屏幕分辨率为1600 * 900:</p>
-<h2 id="一、属性"><a href="#一、属性" class="headerlink" title="一、属性"></a>一、属性</h2><h3 id="1、availHeight"><a href="#1、availHeight" class="headerlink" title="1、availHeight"></a>1、<code>availHeight</code></h3><p>含义：屏幕像素高度（分辨率高度） - 系统任务栏高度（位置在屏幕上或下，默认数值为40或30），只读。</p>
-<p>使用：</p>
-<pre><code>screen.availHeight;     // 900，自动隐藏任务栏；860，显示任务栏。
-</code></pre><h3 id="2、availWidth"><a href="#2、availWidth" class="headerlink" title="2、availWidth"></a>2、<code>availWidth</code></h3><p>含义：屏幕像素宽度（分辨率宽度） - 系统任务栏宽度（位置在屏幕左或右，默认数值为40或30），只读。</p>
-<p>使用：</p>
-<pre><code>screen.availHeight;     // 1600，自动隐藏任务栏；1560，显示任务栏。
-</code></pre><h3 id="3、height"><a href="#3、height" class="headerlink" title="3、height"></a>3、<code>height</code></h3><p>含义：屏幕像素高度（分辨率高度），只读。</p>
-<p>使用：</p>
-<pre><code>screen.height;     // 900
-</code></pre><h3 id="4、width"><a href="#4、width" class="headerlink" title="4、width"></a>4、<code>width</code></h3><p>含义：屏幕像素宽度（分辨率宽度），只读。</p>
-<p>使用：</p>
-<pre><code>screen.width;     // 1600
-</code></pre><h3 id="5、availTop"><a href="#5、availTop" class="headerlink" title="5、availTop"></a>5、<code>availTop</code></h3><p>含义：可用的屏幕顶部至显示器的顶部；如果任务栏的位置在顶部，<code>availTop</code>的值就是任务栏高度值；除此之外，大部分情况下，值为0，只读。</p>
-<p>使用：</p>
-<pre><code>screen.availTop;     // 0
-</code></pre><h3 id="6、availLeft"><a href="#6、availLeft" class="headerlink" title="6、availLeft"></a>6、<code>availLeft</code></h3><p>含义：同上，可用的屏幕左边至显示器的左边，大部分情况下，值为0，只读。</p>
-<p>使用：</p>
-<pre><code>screen.availLeft;     // 0
-</code></pre><h3 id="7、colorDepth"><a href="#7、colorDepth" class="headerlink" title="7、colorDepth"></a>7、<code>colorDepth</code></h3><p>含义：色彩深度，详细自查，只读。</p>
-<p>使用：</p>
-<pre><code>screen.colorDepth;     // 24
-</code></pre><h3 id="8、pixelDepth"><a href="#8、pixelDepth" class="headerlink" title="8、pixelDepth"></a>8、<code>pixelDepth</code></h3><p>含义：像素深度，详细自查，只读。</p>
-<p>使用：</p>
-<pre><code>screen.pixelDepth;     // 24
-</code></pre>
-                
-<p class="red-link-context">
-    <a href="/2018/05/31/Docdument对象/" rel="next" title="Docdument对象">
-    上一篇：Docdument对象
-  </a>
-</p>
-
-
-
-<p class="red-link-context">
-    <a href="/2018/05/31/Navigator对象/" rel="next" title="Navigator对象">
-    下一篇：Navigator对象
-  </a>
-</p>
-
-
-            </div>
-			
-        </div>
-    </div>
-</article>
-
-
-
-<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTczNS82MzAx">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
 
 </div>
 

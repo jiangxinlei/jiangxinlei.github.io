@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jiangxinlei.cn/"/>
-  <updated>2018-05-31T13:50:55.284Z</updated>
+  <updated>2018-06-02T13:39:05.009Z</updated>
   <id>http://jiangxinlei.cn/</id>
   
   <author>
@@ -14,6 +14,219 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flex全解析</title>
+    <link href="http://jiangxinlei.cn/2018/06/02/Flex%E5%85%A8%E8%A7%A3%E6%9E%90/"/>
+    <id>http://jiangxinlei.cn/2018/06/02/Flex全解析/</id>
+    <published>2018-06-02T13:29:32.000Z</published>
+    <updated>2018-06-02T13:39:05.009Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>周末整理一下<code>Flex</code>相关的知识，花了一天的时间，发现细节还是挺多的，特别是<code>flex-shrink</code>公式想了很久。除了第一张图之外，其他的图都是手画，画的不好请见谅。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08628cb41fc8?w=563&amp;h=333&amp;f=png&amp;s=10005" alt="Flex概念"></p>
+<blockquote>
+<p>参考阮一峰老师博客：<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a></p>
+</blockquote>
+<p>如图，Flex 由父容器 <code>container</code> 和子项目 <code>item</code> 组成，Flex <code>container</code> 和 <code>item</code> 有相应的css属性设置。</p>
+<h2 id="一、Flex-容器-container"><a href="#一、Flex-容器-container" class="headerlink" title="一、Flex 容器 container"></a>一、Flex 容器 <code>container</code></h2><ul>
+<li><p>两条轴：水平主轴 <code>main axis</code>，垂直交叉轴 <code>cross axis</code>，<code>flex-direction</code> 属性可改变主轴方向</p>
+</li>
+<li><p>主轴起点终点：起点 <code>main start</code>，终点 <code>main end</code></p>
+</li>
+<li><p>交叉轴起点终点：起点 <code>cross start</code>，终点 <code>cross end</code></p>
+</li>
+</ul>
+<p>实现Flex 布局需给父容器设置 <code>display</code> 属性</p>
+<pre><code>.container {
+  display: flex | inline-flex;   /* 块级元素设置flex，行内元素设置inline-flex */
+}
+</code></pre><p>相应HTML如下：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="1、flex-direction"><a href="#1、flex-direction" class="headerlink" title="1、flex-direction"></a>1、<code>flex-direction</code></h3><p>含义：设置主轴的方向，即 <code>item</code> 的排列方向</p>
+<pre><code>.container {
+  flex-direction: row | row-reverse | column | column-reverse;
+}
+</code></pre><figcaption><p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c086d0d4d46cc?w=636&amp;h=170&amp;f=png&amp;s=2969" alt="row"></p></figcaption><pre class=" language-row</code>：默认值，主轴水平方向，起点在容器左端</p>"><code class="language-row</code>：默认值，主轴水平方向，起点在容器左端</p>"><p><code>row-reverse</code>：主轴水平方向，起点在容器右端</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0876153bd108?w=610&h=176&f=png&s=3208" alt="row-reverse"></p>
+<p><code>column</code>：主轴垂直方向，起点在容器上端</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08c2eb6f8c1e?w=190&h=622&f=png&s=3638" alt="column"></p>
+<p><code>column-reverse</code>：主轴垂直方向，起点在容器下端</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08c7c8665702?w=182&h=621&f=png&s=3766" alt="column-reverse"></p>
+<p><strong>注释：以下未说明都以 <code>flex-direction: row</code> 为例</strong></p>
+<h3 id="2、flex-wrap"><a href="#2、flex-wrap" class="headerlink" title="2、flex-wrap"></a>2、<code>flex-wrap</code></h3><p>含义：设置容器内 <code>item</code> 是否换行；<code>flex-direction</code> 的值为 <code>row</code> 时，每行 <code>item</code> 总宽 > 容器宽换行；值为 <code>column</code> 时，每行 <code>item</code> 总高 > 容器高换列</p>
+<pre><code>.container {
+  flex-wrap: nowrap | wrap | wrap-reverse;
+}
+</code></pre><p><code>nowrap</code>：默认值，不换行，<code>item</code> 总宽 &gt; 容器宽，主轴宽固定，每个 <code>item</code> 的宽自适应</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08f1accb9ad0?w=772&amp;h=197&amp;f=png&amp;s=3088" alt="nowrap"></p>
+<p><code>wrap</code>：换行，第一行在上</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08f6880b7dc5?w=767&amp;h=433&amp;f=png&amp;s=4709" alt="wrap"></p>
+<p><code>warp-reverse</code>：换行，第一行在下</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08fafdf114c6?w=773&amp;h=435&amp;f=png&amp;s=4741" alt="warp-reverse"></p>
+<p><strong>注：换行时，有多少行，会将容器高均等分，每行是一个整体，而不是所有行作为一个整体</strong></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c08fed17041b1?w=898&amp;h=630&amp;f=jpeg&amp;s=556869" alt="换行注意点"></p>
+<h3 id="3、flex-flow"><a href="#3、flex-flow" class="headerlink" title="3、flex-flow"></a>3、<code>flex-flow</code></h3><p>含义：<code>flex-direction</code> 和 <code>flex-wrap</code> 的简写</p>
+<h3 id="4、justify-content"><a href="#4、justify-content" class="headerlink" title="4、justify-content"></a>4、<code>justify-content</code></h3><p>含义：设置 <code>item</code> 作为一个整体在主轴上的对齐方式；<code>flex-direction</code> 的值为 <code>row</code> 时，在水平方向上对齐；值为 <code>column</code> 时，在垂直方向上对齐</p>
+<pre><code>.container {
+  justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><p><code>flex-start</code>：默认值，左对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c090fb2f7dab4?w=772&amp;h=159&amp;f=png&amp;s=3252" alt="flex-start"></p>
+<p><code>flex-end</code>：右对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09161634e1c3?w=775&amp;h=156&amp;f=png&amp;s=3201" alt="flex-end"></p>
+<p><code>center</code>：垂直居中对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0919a5cf60b0?w=771&amp;h=158&amp;f=png&amp;s=3652" alt="center"></p>
+<p><code>sapce-between</code>：两端对齐，<code>item</code> 之间间隔相等</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c091e3e7168bb?w=770&amp;h=159&amp;f=png&amp;s=4031" alt="sapce-between"></p>
+<p><code>sapce-around</code>：<code>item</code> 两侧间隔相等，两端 <code>item</code> 间隔是其他的一半</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0921b7fcdea2?w=768&amp;h=153&amp;f=png&amp;s=4385" alt="sapce-around"></p>
+<h3 id="5、align-item"><a href="#5、align-item" class="headerlink" title="5、align-item"></a>5、<code>align-item</code></h3><p>含义：设置 <code>item</code> 作为一个整体在交叉轴上的对齐方式，<code>flex-direction</code> 的值为 <code>row</code> 时，在垂直方向上对齐；值为 <code>column</code> 时，在水平方向上对齐</p>
+<pre><code>.container {
+  align-item: stretch | flex-start | flex-end | center | baseline;
+}
+</code></pre><p><code>stretch</code>：默认值，<code>item</code> 未设置高或为 <code>auto</code> ，<code>item</code> 的总高和容器高一致</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0927612a5cdd?w=769&amp;h=317&amp;f=png&amp;s=6318" alt="stretch"></p>
+<p><code>flex-satrt</code>：交叉轴起点对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c092af3705652?w=769&amp;h=298&amp;f=png&amp;s=5217" alt="flex-satrt"></p>
+<p><code>flex-end</code>：交叉轴终点对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c092eae250904?w=770&amp;h=377&amp;f=png&amp;s=5849" alt="flex-end"></p>
+<p><code>center</code>：交叉轴居中对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0931d15a7eeb?w=774&amp;h=354&amp;f=png&amp;s=5606" alt="center"></p>
+<p><code>baseline</code>：每个<code>item</code> 里的第一行文字的基线（文字底部）对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09415e6d69ad?w=770&amp;h=342&amp;f=png&amp;s=5791" alt="baseline"></p>
+<blockquote>
+<p>Tip：设置水平垂直居中 <code>.container { display: flex; justify-content: center; align-item: center; }</code></p>
+</blockquote>
+<h3 id="6、align-content"><a href="#6、align-content" class="headerlink" title="6、align-content"></a>6、<code>align-content</code></h3><p>含义：容器设置了换行后，所有行作为一个整体的对齐方式；多行时，该属性才有效</p>
+<pre><code>.container {
+  align-content: stretch | flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><p><code>stretch</code>：默认值，<code>item</code> 未设置高或为 <code>auto</code> ，每行 <code>item</code> 高会平分交叉轴的高</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0a50780fd948?w=670&amp;h=387&amp;f=png&amp;s=4973" alt="stretch"></p>
+<p><code>flex-satrt</code>：交叉轴起点对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09e25bdf4342?w=684&amp;h=356&amp;f=png&amp;s=4015" alt="flex-satrt"></p>
+<p><code>flex-end</code>：交叉轴终点对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09e7f028aaaf?w=706&amp;h=336&amp;f=png&amp;s=3993" alt="flex-end"></p>
+<p><code>center</code>：交叉轴居中对齐</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09eb62ce250a?w=717&amp;h=339&amp;f=png&amp;s=3940" alt="center"></p>
+<p><code>sapce-between</code>：两端对齐，每行<code>item</code> 之间间隔相等</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09eeb926c4b6?w=697&amp;h=390&amp;f=png&amp;s=4271" alt="sapce-between"></p>
+<p><code>sapce-around</code>：<code>item</code> 两侧间隔相等，两端每行 <code>item</code> 间隔是其他行的一半</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09f209de5a08?w=688&amp;h=383&amp;f=png&amp;s=4170" alt="sapce-around"></p>
+<blockquote>
+<p>Tip：设置水平垂直居中 <code>.container { display: flex; justify-content: center; align-content: center; }</code></p>
+</blockquote>
+<p><strong>注意：</strong></p>
+<p>1)、<code>align-content</code> 和 <code>align-item</code> 比较。</p>
+<ul>
+<li><p>多行下，两个属性的 <code>stretch</code> 、<code>flex-satrt</code>、<code>flex-end</code>、<code>center</code> 实现效果类似，区别只在于换行后，<code>justify-content</code> 是单行作为一个整体，每行均等分高；<code>align-content</code> 是多行作为一个整体</p>
+</li>
+<li><p><code>align-content</code> 优先级比 <code>justify-content</code> 高</p>
+</li>
+</ul>
+<p>2)、<code>align-content</code> 和 <code>justify-content</code> 比较。</p>
+<ul>
+<li>多行下，两个属性的 <code>sapce-between</code> 和 <code>sapce-around</code> 实现效果，区别只在于 <code>justify-content</code> 在主轴上对齐，<code>align-content</code> 在交叉轴上对齐</li>
+</ul>
+<h2 id="二、Flex-项目-item"><a href="#二、Flex-项目-item" class="headerlink" title="二、Flex 项目 item"></a>二、Flex 项目 <code>item</code></h2><ul>
+<li>水平、垂直尺寸：主轴尺寸 <code>main size</code>，交叉轴尺寸 <code>cross size</code></li>
+</ul>
+<h3 id="1、order"><a href="#1、order" class="headerlink" title="1、order"></a>1、<code>order</code></h3><p>含义： <code>item</code> 在容器中的排列顺序，默认为0，无论有没有换行，数值越小，顺序越靠前</p>
+<pre><code>.item {
+  order: &lt;integer&gt;;
+}
+</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09f6d52ba5cd?w=580&amp;h=156&amp;f=png&amp;s=3335" alt="orde"></p>
+<h3 id="2、flex-basis"><a href="#2、flex-basis" class="headerlink" title="2、flex-basis"></a>2、<code>flex-basis</code></h3><p>含义：设置 <code>item</code> 的宽度，会覆盖 <code>width</code>，<code>item</code> 总宽即每个 <code>flex-basis</code> 值的和，默认为 <code>auto</code></p>
+<pre><code>.item {
+  flex-basis: &lt;auto&gt; | &lt;percent&gt; | &lt;size&gt;;
+}
+</code></pre><ul>
+<li><p>值为0或 <code>auto</code> 时，如果 <code>item</code> 没有设置宽度，则宽度为 <code>item</code> 内容宽度</p>
+</li>
+<li><p>值为百分比，<code>item</code> 的宽度占 <code>container</code> 宽度的百分比</p>
+</li>
+<li><p>值为固定大小，<code>item</code> 的宽度即为固定大小，如果总宽 &gt; <code>container</code> 宽度，并且设置了换行，则 <code>item</code> 换行，宽度不变；未设置换行，则 <code>item</code> 平分 <code>container</code> 宽度</p>
+</li>
+</ul>
+<blockquote>
+<p>Tip：建议用 <code>flex-basis</code> 设置 <code>item</code> 的宽度，而不是 <code>width</code></p>
+</blockquote>
+<h3 id="3、flex-grow"><a href="#3、flex-grow" class="headerlink" title="3、flex-grow"></a>3、<code>flex-grow</code></h3><p>含义：默认值为0，设置 <code>item</code> 放大比例</p>
+<p>1)、每个 <code>flex-basis</code> 值的和 &gt; 容器宽，无论是否换行，<code>flex-grow</code> 无效；</p>
+<p>2)、每个 <code>flex-basis</code> 值的和 &lt;= 容器宽：</p>
+<ul>
+<li><p>当<code>item</code> 的宽度且 <code>flex-basis</code> 属性未设置，如果<code>flex-grow</code> 值为0或不设置，<code>items</code> 宽为内容宽，<code>flex-grow</code> 值为正整数：<code>item</code> 宽 = 容器宽 / (每个 <code>item</code> 的 <code>flex-grow</code> 值之和)</p>
+</li>
+<li><p><code>flex-basis</code> 属性设置了：<code>item</code> 宽 = 每个 <code>item</code> 已设置的宽度 + (容器宽 - <code>item</code> 已设置的总宽) / <code>item</code> 的数量</p>
+</li>
+</ul>
+<blockquote>
+<p>Tip：<code>flex-grow</code> 最好可以和 <code>flex-basis</code> 一起用，哪怕 <code>flex-basis</code> 值为0</p>
+</blockquote>
+<pre><code>.item {
+  flex-grow: 0 | &lt;正整数&gt;;
+}
+</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09fad19c9419?w=771&amp;h=202&amp;f=png&amp;s=4126" alt="flex-grow"></p>
+<h3 id="4、flex-shrink"><a href="#4、flex-shrink" class="headerlink" title="4、flex-shrink"></a>4、<code>flex-shrink</code></h3><p>含义：默认值为1，设置 <code>item</code> 缩小比例，只有不换行时才有效</p>
+<pre><code>.item {
+  flex-shrink: 0 | &lt;正整数&gt;;
+}
+</code></pre><p>1)、每个 <code>flex-basis</code> 值的和 &lt;= 容器宽，无论是否换行，<code>flex-shrink</code> 无效；</p>
+<p>2)、每个 <code>flex-basis</code> 值的和 &gt; 容器宽：</p>
+<ul>
+<li><code>flex-shrink</code> 值没设置或相同，即每个 <code>item</code> 均等分容器宽</li>
+<li><code>flex-shrink</code> 和 <code>flex-basis</code> 值不同，如何得到 <code>item</code> 的宽度？</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c09fedc45a9b3?w=769&amp;h=219&amp;f=png&amp;s=8715" alt="align-self"></p>
+<p>如图，每个 <code>item</code> 的 <code>flex-shrink</code> 和 <code>flex-basis</code> 值都设置了，容器宽为600px：</p>
+<p>设置缩小比例为 <code>x</code>，1倍是 <code>x</code>，2倍是 <code>2x</code>，3倍是 <code>3x</code>，第一个盒子应该缩小 <code>240px * x</code>，第二个盒子应缩小 <code>360px * 2x</code>，第3个盒子应缩小 <code>480px * 3x</code>，三个盒子缩小的宽度加上容器宽度，等于三个盒子原来的宽度和，公式为 <code>240 * x + 360 * 2x + 480 * 3x + 600 = 240 + 360 + 480</code>，解出 <code>x = 0.2</code>，每个 <code>item</code> 缩小后的宽度即可得出</p>
+<blockquote>
+<p>Tip：最好不要设置 <code>flex-shrink</code> 值为0，则 <code>item</code> 不缩小，可能会导致 <code>item</code> 撑出容器；并且同一条件下，<code>flex-shrink</code> 和 <code>flex-grow</code> 只有一个有效</p>
+</blockquote>
+<h3 id="5、flex"><a href="#5、flex" class="headerlink" title="5、flex"></a>5、<code>flex</code></h3><p>含义：是<code>flex-grow</code>，<code>flex-shrink</code> 和 <code>flex-basis</code> 的简写，默认值为 <code>o 1 auto</code></p>
+<pre><code>.item{
+  flex: none | [ &lt;&#39;flex-grow&#39;&gt; &lt;&#39;flex-shrink&#39;&gt;? || &lt;&#39;flex-basis&#39;&gt; ]
+}
+</code></pre><p>快捷键：<code>auto</code>（<code>1, 1, auto</code>）；<code>none</code>（<code>0 0 auto</code>）</p>
+<p>有以下情况：</p>
+<p>1)、<code>flex: 1</code> &lt;=&gt; <code>flex: 1 1 0%</code></p>
+<p>2)、<code>flex: 0</code> &lt;=&gt; <code>flex: 0 1 0%</code></p>
+<p>3)、<code>flex: 0%</code> &lt;=&gt; <code>flex: 1 1 0%</code></p>
+<p>4)、<code>flex: 10px</code> &lt;=&gt; <code>flex: 1 1 10px</code></p>
+<p>4)、<code>flex: 2 2</code> &lt;=&gt; <code>flex: 2 2 0%</code></p>
+<p>5)、<code>flex: 2 10px</code> &lt;=&gt; <code>flex: 2 1 10px</code></pre>
+<h3 id="6、align-self"><a href="#6、align-self" class="headerlink" title="6、align-self"></a>6、<code>align-self</code></h3><p>含义：为当前 <code>item</code> 设置在交叉轴方向的对齐方式</p>
+<pre><code>.item {
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p>和 <code>align-item</code> 区别：</p>
+<ul>
+<li><code>align-item</code> 是对所有 <code>item</code>，<code>align-self</code> 是对当前 <code>item</code></li>
+<li><code>align-self</code> 的 <code>auto</code> 值表示继承 <code>container</code> 属性</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/6/2/163c0a03529b1b00?w=764&amp;h=395&amp;f=png&amp;s=5038" alt="align-self"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;周末整理一下&lt;code&gt;Flex&lt;/code&gt;相关的知识，花了一天的时间，发现细节还是挺多的，特别是&lt;code&gt;flex-shrink&lt;/c
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://jiangxinlei.cn/categories/CSS/"/>
+    
+    
+      <category term="Flex" scheme="http://jiangxinlei.cn/tags/Flex/"/>
+    
+      <category term="布局" scheme="http://jiangxinlei.cn/tags/%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title>BOM的各种高度、位置</title>
@@ -920,18 +1133,19 @@ $$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
     <link href="http://jiangxinlei.cn/2017/07/09/%E5%89%8D%E8%A8%80/"/>
     <id>http://jiangxinlei.cn/2017/07/09/前言/</id>
     <published>2017-07-09T07:13:39.000Z</published>
-    <updated>2017-07-26T12:25:20.199Z</updated>
+    <updated>2018-06-02T13:30:56.022Z</updated>
     
-    <content type="html"><![CDATA[<p>大家好，我是书月秋亭，一名前端工程师。创建此博客的初衷，是想让自己在技术学习过程中做总结，以博客笔记的形式展示出来，这样可以很好地方便自己查阅，当然，如果可以给同在学习道路上兄弟提供一点帮助的话，是我的荣幸。</p>
-<p>本人不是大牛，如文章出现不正确的地方，欢迎在评论中指出，希望与大家相互学习，共同进步。</p>
+    <content type="html"><![CDATA[<p>创建此博客的初衷，是想让自己在技术学习过程中做总结，以博客笔记的形式展示出来，这样可以很好地方便自己查阅，当然，如果可以给同在学习道路上兄弟提供一点帮助的话，是我的荣幸。</p>
+<p>如文章出现不正确的地方，欢迎在评论中指出，希望与大家相互学习，共同进步。</p>
 <p>博客由HEXO驱动，评论用的是来比力，欢迎给我评论留言，也欢迎关注我的<a href="http://weibo.com/familychapsy" target="_blank" rel="external">新浪微博</a>和<a href="https://github.com/jiangxinlei" target="_blank" rel="external">GitHub</a>。</p>
 <p>最后，欢迎各位大牛提宝贵意见，十分感激。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;大家好，我是书月秋亭，一名前端工程师。创建此博客的初衷，是想让自己在技术学习过程中做总结，以博客笔记的形式展示出来，这样可以很好地方便自己查阅，当然，如果可以给同在学习道路上兄弟提供一点帮助的话，是我的荣幸。&lt;/p&gt;
-&lt;p&gt;本人不是大牛，如文章出现不正确的地方，欢迎在评论中
+      &lt;p&gt;创建此博客的初衷，是想让自己在技术学习过程中做总结，以博客笔记的形式展示出来，这样可以很好地方便自己查阅，当然，如果可以给同在学习道路上兄弟提供一点帮助的话，是我的荣幸。&lt;/p&gt;
+&lt;p&gt;如文章出现不正确的地方，欢迎在评论中指出，希望与大家相互学习，共同进步。&lt;/p&gt;
+&lt;p&gt;
     
     </summary>
     
