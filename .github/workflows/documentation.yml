@@ -29,3 +29,4 @@ jobs:
           github_token: ${{ secrets.JXL_ACCESS_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
+          BRANCH: gh-pages
